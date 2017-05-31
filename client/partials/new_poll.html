@@ -1,0 +1,26 @@
+<a href="" ng-click = 'UC.logout()'>Logout</a>
+<a href="#!/dashboard">Cancel</a>
+<h1>Put the question and options here:</h1>
+
+<div ng-controller = 'QuestionsController as QC'>
+<form ng-submit = 'QC.create(QC.newQuestion)' ng-submit='QC.createAnswer(QC.newAnswer, index, QC.question._id)'>
+	<div>
+		<label>Question: </label>
+		<input ng-model = QC.newQuestion.question>
+	</div>
+	<div>
+		<label>Option 1: <input type="text" ng-model='QC.newQuestion.optionOne.name'></label>
+	</div>
+	<div>
+		<label>Option 2: <input type="text" ng-model='QC.newQuestion.optionTwo.name'></label>
+	</div>
+	<div>
+		<label>Option 3: <input type="text" ng-model='QC.newQuestion.optionThree.name'></label>
+	</div>
+	<div>
+		<label>Option 4: <input type="text" ng-model='QC.newQuestion.optionFour.name'></label>
+	</div>
+	<input type="submit" value="Create Poll">
+	<p ng-repeat='error in QC.new_question_errors'>{{error}}</p>
+	</form>
+</div>
